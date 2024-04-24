@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct{
+  char people[20];
+  int start_year;
+  int id_type;
+  union{
+    int money;
+    char vision[20];
+  } start;
+} startup;
+
+int main(){
+  startup moseblue;
+  strcpy(moseblue.people,"Moses Park");
+  moseblue.start_year = 2024;
+  moseblue.id_type = 1;
+  moseblue.start.money = 1000000;
+  strcpy(moseblue.start.vision,"Make world better");
+  printf("Moseblue %s, %s,%d",moseblue.people,moseblue.start.vision,moseblue.start_year);
+
+  return 0;
+}
+
+
